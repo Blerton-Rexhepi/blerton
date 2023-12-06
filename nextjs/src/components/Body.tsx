@@ -22,13 +22,17 @@ function Body() {
         <div className="w-[350px] bg-white ">
           <div className="px-[10px] ">
             {Service.map((index) => (
-              <div className="border border-solid text-left my-[10px] flex justify-between items-center px-[10px] py-[10px]">
+              <div
+                className="border border-solid text-left my-[10px] flex justify-between items-center px-[10px] py-[10px]"
+                key={index.id}
+              >
                 <div>
                   <p className="text-[16px]"> {index.name}</p>
                 </div>
                 <div
                   className="w-[16px]"
-                  onClick={() => handleServiceClick(index)}>
+                  onClick={() => handleServiceClick(index)}
+                >
                   <Link href={`/secondstep?id=${index.id}`}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +40,8 @@ function Body() {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-6 h-6">
+                      className="w-6 h-6"
+                    >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
